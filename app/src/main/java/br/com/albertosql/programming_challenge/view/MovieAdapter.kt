@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.albertosql.programming_challenge.R
 import br.com.albertosql.programming_challenge.domain.Movie
+import com.bumptech.glide.Glide
 
 class MovieAdapter(
     private val items: List<Movie>
@@ -31,12 +32,9 @@ class MovieAdapter(
         fun bindView(item: Movie) = with(itemView) {
             val ivMovie = findViewById<ImageView>(R.id.ivMovie)
             val tvTitle = findViewById<TextView>(R.id.tvTitle)
-            val tvDescriptionMovie = findViewById<TextView>(R.id.tvDescriptionMovie)
 
-            //TODO: LOAD IMAGE WITH GLADE
-
+            Glide.with(itemView.context).load(item.poster).centerCrop().into(ivMovie)
             tvTitle.text = item.title
-            tvDescriptionMovie.text = item.description
         }
     }
 }
