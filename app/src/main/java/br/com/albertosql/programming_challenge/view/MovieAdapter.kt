@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 class MovieAdapter(
     private val items: List<Movie>
 ) : RecyclerView.Adapter<MovieAdapter.ViewHolder>() {
+    var onItemClick: ((Movie) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.movie_item, parent, false)
@@ -24,6 +25,9 @@ class MovieAdapter(
         val item = items[position]
 
         holder.bindView(item)
+        holder.itemView.setOnClickListener {
+            onItemClick?.invoke(item)
+        }
     }
 
     override fun getItemCount() = items.size

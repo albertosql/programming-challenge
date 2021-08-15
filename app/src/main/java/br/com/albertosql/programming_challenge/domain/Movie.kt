@@ -31,6 +31,8 @@ data class Movie(
     var awards: String?,
     @SerializedName("Poster")
     var poster: String?,
+    @SerializedName("Ratings")
+    var ratings: List<Rating>?,
     @SerializedName("Metascore")
     var metascore: String?,
     @SerializedName("imdbRating")

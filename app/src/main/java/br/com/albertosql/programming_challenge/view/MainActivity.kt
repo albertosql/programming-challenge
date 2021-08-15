@@ -1,5 +1,6 @@
 package br.com.albertosql.programming_challenge.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -11,14 +12,13 @@ import br.com.albertosql.programming_challenge.R
 import br.com.albertosql.programming_challenge.api.model.MovieApiResult
 import br.com.albertosql.programming_challenge.api.model.MovieService
 import br.com.albertosql.programming_challenge.domain.Movie
+import br.com.albertosql.programming_challenge.util.Constants
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
-const val apiUrl = "https://www.omdbapi.com/"
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initReciclerView()
+        initRecyclerView()
 
         val tvSearch = findViewById<TextView>(R.id.tvSearch)
         val btnSearchMovie = findViewById<Button>(R.id.button_search)
@@ -37,9 +37,10 @@ class MainActivity : AppCompatActivity() {
             retrofitSearch(tvSearch.text.toString())
         }
 
+
     }
 
-    private fun initReciclerView() {
+    private fun initRecyclerView() {
 
         val rvMovies = findViewById<RecyclerView>(R.id.rvMovies)
         movieAdapter = MovieAdapter(listOfMovies)
@@ -48,12 +49,17 @@ class MainActivity : AppCompatActivity() {
             layoutManager = GridLayoutManager(context, 2)
             adapter = movieAdapter
         }
+        movieAdapter.onItemClick = {
+            val intent = Intent(this, MovieDetailsActivity::class.java)
+            intent.putExtra("idMovie", it.imdbID)
+            startActivity(intent)
+        }
     }
 
-    fun retrofitSearch(searchText: String) {
-        //Toast.makeText(this,searchText,2).show()
+    private fun retrofitSearch(searchText: String) {
+
         val retrofit = Retrofit.Builder()
-            .baseUrl(apiUrl)
+            .baseUrl(Constants.API_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
 
@@ -84,6 +90,7 @@ class MainActivity : AppCompatActivity() {
             }
         })
     }
+
 
     fun resetList() {
         listOfMovies.clear()
