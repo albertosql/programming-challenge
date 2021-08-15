@@ -14,8 +14,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:contentDescription="@string/app_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/omdb"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -27,7 +29,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="-"
+        android:text="@string/noData"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,16 +38,13 @@
 
     <TextView
         android:id="@+id/tvYear"
+        style="@style/TextViewStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginStart="170dp"
         android:layout_marginLeft="170dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="-"
-        android:textColor="#3F51B5"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvMovie" />
@@ -59,48 +58,42 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="-"
+        android:text="@string/noData"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tvYear"
         app:layout_constraintTop_toBottomOf="@+id/tvYear" />
 
     <TextView
         android:id="@+id/tvGenre"
+        style="@style/TextViewStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginStart="170dp"
         android:layout_marginLeft="170dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="-"
-        android:textColor="#3F51B5"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPlot" />
 
     <TextView
         android:id="@+id/tvTime"
+        style="@style/TextViewStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginStart="170dp"
         android:layout_marginLeft="170dp"
         android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="- min"
-        android:textColor="#3F51B5"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvGenre" />
 
     <TextView
-        android:id="@+id/tvRealiseTitle"
+        android:id="@+id/tvReleaseTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Original Realise:"
+        android:text="@string/original_release"
         app:layout_constraintEnd_toStartOf="@+id/tvTomatoesTitle"
         app:layout_constraintStart_toStartOf="@+id/ivPoster"
         app:layout_constraintTop_toTopOf="@+id/tvTomatoesTitle" />
@@ -114,41 +107,35 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:text="Rotten Tomatoes:"
+        android:text="@string/rotten_tomatoes"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvRealiseTitle"
+        app:layout_constraintStart_toEndOf="@+id/tvReleaseTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvTime" />
 
     <TextView
         android:id="@+id/tvRealise"
+        style="@style/TextViewStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="-"
-        android:textColor="#3F51B5"
         android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/tvRealiseTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvRealiseTitle" />
+        app:layout_constraintStart_toStartOf="@+id/tvReleaseTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvReleaseTitle" />
 
     <TextView
         android:id="@+id/tvInternetTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Internet Votes:"
+        android:text="@string/internet_votes"
         app:layout_constraintStart_toStartOf="@+id/tvRealise"
         app:layout_constraintTop_toBottomOf="@+id/tvRealise" />
 
     <TextView
         android:id="@+id/tvInternet"
+        style="@style/TextViewStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="-/10"
-        android:textColor="#3F51B5"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/tvInternetTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvInternetTitle" />
 
@@ -157,31 +144,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Metacritic:"
+        android:text="@string/metacritic"
         app:layout_constraintStart_toStartOf="@+id/tvTomatoesTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvTomatoes" />
 
     <TextView
         android:id="@+id/tvMetacritic"
+        style="@style/TextViewStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="-/10"
-        android:textColor="#3F51B5"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/tvMetacriticTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvMetacriticTitle" />
 
     <TextView
         android:id="@+id/tvTomatoes"
+        style="@style/TextViewStyle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:text="-%"
-        android:textColor="#3F51B5"
         android:textSize="20sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/tvTomatoesTitle"
         app:layout_constraintTop_toBottomOf="@+id/tvTomatoesTitle" />
 

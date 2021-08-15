@@ -1,6 +1,5 @@
-package br.com.albertosql.programming_challenge.api.model
+package br.com.albertosql.programming_challenge.model
 
-import br.com.albertosql.programming_challenge.domain.Movie
 import com.google.gson.annotations.SerializedName
 
 data class MovieApiResult(

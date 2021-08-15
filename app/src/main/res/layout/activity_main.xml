@@ -6,16 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".view.MainActivity">
 
-
     <EditText
         android:id="@+id/tvSearch"
         android:layout_width="220dp"
         android:layout_height="51dp"
         android:layout_marginTop="8dp"
-        android:hint="Search a film..."
+        android:hint="@string/search_a_film"
         app:layout_constraintEnd_toStartOf="@+id/button_search"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:autofillHints="name"
+        android:inputType="text" />
 
     <Button
         android:id="@+id/button_search"
@@ -24,13 +25,14 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="30dp"
         android:layout_marginRight="30dp"
-        app:backgroundTint="#3F51B5"
+        app:backgroundTint="@color/blue_app"
         app:icon="?android:attr/actionModeWebSearchDrawable"
         app:iconGravity="textStart"
         app:iconPadding="0sp"
         app:iconTint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:targetApi="lollipop" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvMovies"

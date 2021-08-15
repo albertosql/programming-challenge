@@ -3,12 +3,11 @@ package br.com.albertosql.programming_challenge.view
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.albertosql.programming_challenge.R
-import br.com.albertosql.programming_challenge.domain.Movie
+import br.com.albertosql.programming_challenge.model.Movie
 import com.bumptech.glide.Glide
+import kotlinx.android.synthetic.main.movie_item.view.*
 
 class MovieAdapter(
     private val items: List<Movie>
@@ -34,11 +33,17 @@ class MovieAdapter(
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindView(item: Movie) = with(itemView) {
-            val ivMovie = findViewById<ImageView>(R.id.ivMovie)
-            val tvTitle = findViewById<TextView>(R.id.tvTitle)
-
-            Glide.with(itemView.context).load(item.poster).centerCrop().into(ivMovie)
             tvTitle.text = item.title
+
+            if (item.poster != "N/A") {
+                Glide.with(itemView.context).load(item.poster).centerCrop().into(ivMovie)
+            } else {
+                Glide.with(itemView.context)
+                    .load("https://image.flaticon.com/icons/png/512/1695/1695213.png").centerCrop()
+                    .into(ivMovie)
+            }
+
         }
     }
+
 }

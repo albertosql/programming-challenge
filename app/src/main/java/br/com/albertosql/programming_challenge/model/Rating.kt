@@ -1,4 +1,4 @@
-package br.com.albertosql.programming_challenge.domain
+package br.com.albertosql.programming_challenge.model
 
 import com.google.gson.annotations.SerializedName
 

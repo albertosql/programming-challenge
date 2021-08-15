@@ -1,6 +1,5 @@
-package br.com.albertosql.programming_challenge.api.model
+package br.com.albertosql.programming_challenge.model
 
-import br.com.albertosql.programming_challenge.domain.Movie
 import br.com.albertosql.programming_challenge.util.Constants
 import retrofit2.Call
 import retrofit2.http.GET

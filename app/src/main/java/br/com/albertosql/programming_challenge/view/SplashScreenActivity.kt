@@ -2,9 +2,9 @@ package br.com.albertosql.programming_challenge.view
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import br.com.albertosql.programming_challenge.R
+import kotlinx.android.synthetic.main.activity_splash_screen.*
 
 
 class SplashScreenActivity : AppCompatActivity() {
@@ -12,7 +12,6 @@ class SplashScreenActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
-        val ivSplashScreen = findViewById<ImageView>(R.id.ivSplashScreen)
         ivSplashScreen.alpha = 0f
         ivSplashScreen.animate().setDuration(2000).alpha(1f).withEndAction {
             val intent = Intent(this, MainActivity::class.java)
@@ -20,6 +19,5 @@ class SplashScreenActivity : AppCompatActivity() {
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()
         }
-
     }
 }

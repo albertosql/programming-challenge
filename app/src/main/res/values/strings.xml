@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">programming-challenge</string>
     <string name="movie_image">Movie Image</string>
+
+    <string name="noData">-</string>
+    <string name="search_a_film">Search a film...</string>
+    <string name="original_release">Original Release:</string>
+    <string name="rotten_tomatoes">Rotten Tomatoes:</string>
+    <string name="internet_votes">Internet Votes:</string>
+    <string name="metacritic">Metacritic:</string>
 </resources>
