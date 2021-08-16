@@ -8,4 +8,6 @@
     <string name="rotten_tomatoes">Rotten Tomatoes:</string>
     <string name="internet_votes">Internet Votes:</string>
     <string name="metacritic">Metacritic:</string>
+    <string name="omdb_api">OMDB API</string>
+    <string name="author">POR JOSÉ ALBERTO</string>
 </resources>
